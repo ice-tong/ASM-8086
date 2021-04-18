@@ -1,9 +1,15 @@
+;
+; Print Hello World!
+;
+
 
 ASSUME CS:CODES, DS:DATAS
+
 
 DATAS SEGMENT
     helloWord DB "hello world!", 10, '$'    ; 10: ascii of \n
 DATAS ENDS
+
 
 CODES SEGMENT
 
