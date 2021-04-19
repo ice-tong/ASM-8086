@@ -37,7 +37,7 @@ CODES SEGMENT
         MOV AH, 01H             ; INT 21h / AH=1 - read character
         INT 21H
 
-        CMP  AL, 0DH             ; If Enter key press, break.
+        CMP  AL, 0DH            ; If Enter key press, break.
         JE input_x_end
 
         SUB AL, '0'
@@ -84,7 +84,7 @@ CODES SEGMENT
         JB no_carry
 
         MOV [ZArray + BX - 01H], 01H
-        SUB AL, 0AH                 ; x + y >= 10, carrying.
+        SUB AL, 0AH             ; x + y >= 10, carrying.
 
     no_carry:
 
@@ -95,7 +95,7 @@ CODES SEGMENT
 
     add_x_y_end:
 
-        LEA DX, outputStr           ; Print outputStr
+        LEA DX, outputStr       ; Print outputStr
         MOV AH, 09H
         INT 21H
 
